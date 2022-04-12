@@ -1,4 +1,8 @@
 #!/bin/bash
+# sh curl-scripts/auth/sign-up.sh
+
+EMAIL="sako@house.com"
+PASSWORD="hello"
 
 API="http://localhost:4741"
 URL_PATH="/sign-up"
@@ -16,3 +20,5 @@ curl "${API}${URL_PATH}" \
   }'
 
 echo
+
+# token - 6255d62ccd761170534ce41b
