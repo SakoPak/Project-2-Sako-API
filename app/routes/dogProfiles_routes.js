@@ -4,7 +4,7 @@ const express = require('express')
 const passport = require('passport')
 
 // pull in Mongoose model for examples
-const Dog= require('../models/dog')
+const Dog = require('../models/dog')
 
 // this is a collection of methods that help us detect situations when we need
 // to throw a custom error
@@ -19,6 +19,7 @@ const requireOwnership = customErrors.requireOwnership
 // this is middleware that will remove blank fields from `req.body`, e.g.
 // { example: { title: '', text: 'foo' } } -> { example: { text: 'foo' } }
 const removeBlanks = require('../../lib/remove_blank_fields')
+const dog = require('../models/dog')
 // passing this as a second argument to `router.<verb>` will make it
 // so that a token MUST be passed for that route to be available
 // it will also set `req.user`
@@ -31,14 +32,14 @@ const router = express.Router()
 // GET /dogProfiles
 router.get('/dogProfiles', requireToken, (req, res, next) => {
   Dog.find()
-    .then(dogProfiles => {
+    .then(dog => {
       // `examples` will be an array of Mongoose documents
       // we want to convert each one to a POJO, so we use `.map` to
       // apply `.toObject` to each one
-      return dogProfiles.map(dogProfiles => dogProfiles.toObject())
+      return dog.map(dog => dog.toObject())
     })
     // respond with status 200 and JSON of the examples
-    .then(dogProfiles => res.status(200).json({ dogProfiles: dogProfiles }))
+    .then(dog => res.status(200).json({ dog: dog}))
     // if an error occurs, pass it to the handler
     .catch(next)
 })
@@ -50,7 +51,7 @@ router.get('/dogProfiles/:id', requireToken, (req, res, next) => {
   Dog.findById(req.params.id)
     .then(handle404)
     // if `findById` is successful, respond with 200 and "example" JSON
-    .then(dogProfiles => res.status(200).json({ dogProfiles: dogProfiles.toObject() }))
+    .then(dog => res.status(200).json({ dog: dog.toObject() }))
     // if an error occurs, pass it to the handler
     .catch(next)
 })
@@ -61,10 +62,10 @@ router.post('/dogProfiles', requireToken, (req, res, next) => {
   // set owner of new example to be current user
   req.body.dog.owner = req.user.id
 
-  Dog.create(req.body.dogProfiles)
-    // respond to succesful `create` with status 201 and JSON of new "example"
-    .then(dogProfiles => {
-      res.status(201).json({ dogProfiles: dogProfiles.toObject() })
+  Dog.create(req.body.dog)
+    // respond to successful `create` with status 201 and JSON of new "example"
+    .then(dog => {
+      res.status(201).json({ dog: dog.toObject() })
     })
     // if an error occurs, pass it off to our error handler
     // the error handler needs the error message and the `res` object so that it
@@ -81,13 +82,13 @@ router.patch('/dogProfiles/:id', requireToken, removeBlanks, (req, res, next) =>
 
   Dog.findById(req.params.id)
     .then(handle404)
-    .then(dogProfiles => {
+    .then(dog => {
       // pass the `req` object and the Mongoose record to `requireOwnership`
       // it will throw an error if the current user isn't the owner
-      requireOwnership(req, dogProfiles)
+      requireOwnership(req, dog)
 
       // pass the result of Mongoose's `.update` to the next `.then`
-      return example.updateOne(req.body.dogProfiles)
+      return dog.updateOne(req.body.dog)
     })
     // if that succeeded, return 204 and no JSON
     .then(() => res.sendStatus(204))
@@ -100,11 +101,11 @@ router.patch('/dogProfiles/:id', requireToken, removeBlanks, (req, res, next) =>
 router.delete('/dogProfiles/:id', requireToken, (req, res, next) => {
   Dog.findById(req.params.id)
     .then(handle404)
-    .then(dogProfiles => {
+    .then(dog => {
       // throw an error if current user doesn't own `example`
-      requireOwnership(req, dogProfiles)
+      requireOwnership(req, dog)
       // delete the example ONLY IF the above didn't throw
-      dogProfiles.deleteOne()
+      dog.deleteOne()
     })
     // send back 204 and no content if the deletion succeeded
     .then(() => res.sendStatus(204))
