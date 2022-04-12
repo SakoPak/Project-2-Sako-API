@@ -1,4 +1,9 @@
 #!/bin/bash
+# sh curl-scripts/auth/sign-in.sh
+
+EMAIL="sako@house.com"
+PASSWORD="hello"
+
 
 API="http://localhost:4741"
 URL_PATH="/sign-in"
