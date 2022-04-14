@@ -22,7 +22,7 @@ Dubbed 'Strava for dogs', this app will help you track your dogs' activity and e
 
 You can view my inital wireframes here:
 
-<a href="https://imgur.com/dCSsY3X" target="_blank">Wireframe 1: Landing Page</a>
+<a href="https://imgur.com/dCSsY3X" target="_blank">Wireframe 1:  Landing Page</a>
 <a href="https://imgur.com/72VY86x" target="_blank">Wireframe 2: Entire App Layout</a>
 
 

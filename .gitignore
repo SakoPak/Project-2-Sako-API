@@ -111,8 +111,6 @@ _SpecRunner.html
 *.svg
 *.ttf
 *.eot
-<<<<<<< HEAD
-=======
 public/
 
 ### Ruby ###
@@ -204,4 +202,3 @@ bower.json # same
 .byebug_history
 
 # End of https://www.gitignore.io/api/rails
->>>>>>> 56d607e (Initial Commit - Express side)
