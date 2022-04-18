@@ -5,7 +5,7 @@ EMAIL="sako@house.com"
 PASSWORD="hello"
 
 
-API="http://localhost:4741"
+API="https://cryptic-shore-49973.herokuapp.com"
 URL_PATH="/sign-up"
 
 curl "${API}${URL_PATH}" \

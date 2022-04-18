@@ -1,7 +1,7 @@
 #!/bin/bash
 # sh curl-scripts/auth/change-password.sh
 
-API="http://localhost:4741"
+API="https://cryptic-shore-49973.herokuapp.com"
 URL_PATH="/change-password"
 
 curl "${API}${URL_PATH}/" \
