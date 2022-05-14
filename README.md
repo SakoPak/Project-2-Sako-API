@@ -3,14 +3,14 @@
 
 ## Introduction
 
-Dubbed 'Strava for dogs', this app will help you track your dogs' activity and ensure that they are staying healthy and happy! 
+A digital notebook for your furry friends, this app will help you track your dogs' information and ensure that they are staying healthy and happy!
 
 ## Using Pawva
 
 1. Sign Up: If you're a first time user, sign up with your email and password.
-2. Sign In: If you're already registered, congrats! Click 'Sign In.'
+2. Sign In: If you're already registered, congrats! Click 'Sign In'.
 3. Profiles: Add info about your furry friend. View your entire furry posse by clicking on 'View All" under the Profiles tab. To view, edit, or delete them individually, click on their name cards.
-4. Have fun keeping track of all their info by clicking 'View All Profiles". 
+4. Have fun keeping track of all their info on file!
 
 ## Logging in Online
  To log in and get started, click <a href="https://sakopak.github.io/Project-2-Sako/" target="_blank">here!</a>
