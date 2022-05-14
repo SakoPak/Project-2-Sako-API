@@ -10,9 +10,7 @@ Dubbed 'Strava for dogs', this app will help you track your dogs' activity and e
 1. Sign Up: If you're a first time user, sign up with your email and password.
 2. Sign In: If you're already registered, congrats! Click 'Sign In.'
 3. Profiles: Add info about your furry friend. View your entire furry posse by clicking on 'View All" under the Profiles tab. To view, edit, or delete them individually, click on their name cards.
-4. Activity: Log your daily walks. There's a spot to jot down notes, log minutes walked, and type of activity.
-5. Have fun keeping track of all their activity by clicking 'View All" under the Activity tab. Set monthly activity goals and your pup(s) will slobber you with gratitude at all their outdoor time!
-
+4. Have fun keeping track of all their info by clicking 'View All Profiles". 
 
 ## Logging in Online
  To log in and get started, click <a href="https://sakopak.github.io/Project-2-Sako/" target="_blank">here!</a>
@@ -28,8 +26,6 @@ Dubbed 'Strava for dogs', this app will help you track your dogs' activity and e
 - User will be able to sign up.
 - User will be able to sign in and sign out.
 - User will create a profile of their dog(s).
-- User will be able to log type and duration of activity, including notes.
-- User will be able to edit, delete and add new activity and view all of the activities.
 - User will be able to edit, delete and add new profile and view all of their dog profiles.
   
 
